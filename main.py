@@ -49,7 +49,7 @@ with row0_2:
     st.write("")
 
 row0_2.subheader(
-    "GrowingTenten \n 성장발육엔텐텐"
+    "GrowingTenten \n 🔟 성장발육엔텐텐"
 )
 
 # Introduction
@@ -79,6 +79,13 @@ with row1_1:
         목표는 지역 별 인구 수에 따른 의료기관 비율을 비교 분석하고 도표와 지도를 통해 시각화하는 것이다. 
         인구수에 따른 **인프라 격차**가 발생할 것이라는 가설을 검증하고 현재 의료 인프라가 부족한 지역을 찾는다. 
         더하여, 의료시설 개업과 폐업 데이터를 분석하여 앞으로의 인프라 격차를 개선시킬 수 있는 방안을 모색해 본다.
+        
+        
+        '''
+    )
+    st.markdown(
+        '''
+        
         '''
     )
 
@@ -155,7 +162,7 @@ row4_space1, row4_1, row4_space2 = st.columns(
 
 with row4_1, _lock:
     st.subheader("Data Visualization")
-    fig, ax = plt.subplots(figsize=(20, 5))
+    fig, ax = plt.subplots(figsize=(25, 5))
     sns.countplot(
         data=data_medical, x='시도명',
         order=data_medical.loc[data_medical['현황'] == 1, '시도명'].value_counts(
@@ -165,17 +172,17 @@ with row4_1, _lock:
     ax.set_title("전국 의료기관 현황")
     st.pyplot(fig)
 
-    fig, ax = plt.subplots(figsize=(20, 5))
+    fig, ax = plt.subplots(figsize=(25, 5))
     sns.lineplot(data=data.sort_values(
         '의료기관수', ascending=False), x="시도명", y="총인구수")
     st.pyplot(fig)
 
 # Footers
-row5_space1, row5_1, row5_space2 = st.columns(
+footer_space1, footer_1, footer_space2 = st.columns(
     (0.01, 1, 0.01)
 )
 
-with row5_1, _lock:
+with footer_1, _lock:
     st.markdown("***")
     st.markdown(
         "**성장발육엔텐텐** - 이재모, 조예슬, 임혜진, 김영민"
